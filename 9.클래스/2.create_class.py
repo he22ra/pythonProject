@@ -12,3 +12,5 @@ a = 10
 print(type(a))
 
 b = "문자열객체"
+print(type(b))
+print(b.__dir__())

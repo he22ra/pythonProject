@@ -1,3 +1,11 @@
+'''
+    * 웹 크롤링
+      - 날짜 추출
+        - td 태그중에 원하는 정보만을 따로 가져와야 함
+        - 날짜 태그 규칙 찾아서 td 태그들 중에 날짜를 가져옴
+
+
+'''
 page_no = 1
 page_url = f"https://finance.naver.com/sise/sise_index_day.naver?code=KPI200&page={page_no}"
 print(page_url)

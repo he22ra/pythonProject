@@ -21,3 +21,19 @@ print()
 store_a = [20, 10, 30]  # 파이썬 리스트 (매장 A의 매출)
 store_b = [70, 90, 70]  # 파이썬 리스트 (매장 B의 매출)
 
+# 넘파이 곱셈
+arr1 = np.array([[1,2], [3,4], [5,6]])
+arr2 = np.array([[1,1], [1,2], [2,3]])
+
+result = arr1 * arr2
+print(result)
+
+print()
+
+# 행렬 곱셈
+arr1 = np.array([[1,2,3], [4,5,6], [7,8,9]])
+arr2 = np.array([[2,2], [2,2], [2,2]])
+
+# result = arr1 @ arr2
+result = arr1.dot(arr2)
+print(result)

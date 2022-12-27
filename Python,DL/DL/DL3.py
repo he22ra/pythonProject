@@ -24,3 +24,35 @@ from sklearn import linear_model
 regr = linear_model.LinearRegression()
 
 # 입력 데이터 집합 X
+X = [[163], [179], [166], [169], [171]]     # 입력 데이터
+y = [54, 63, 57, 56, 58]                    # 정답
+regr.fit(X, y)                              # 데이터 사용하여 훈련(학습)하기
+
+# 직선의 기울기
+coef = regr.coef_                           # regr 모델의 coef_속성값으로 얻음
+
+# 직선의 절편
+intercept = regr.intercept_                 # regr 모델의 intercept_ 속성값으로 얻음
+
+score = regr.score(X, y)
+
+print("y = {} * x + {:.2f}".format(coef.round(2), intercept))
+print("데이터와 선형 회귀 직선의 관계 함수 : {:.1%}".format(score))
+
+import matplotlib.pyplot as plt
+
+fig = plt.figure(figsize=(8,8))
+
+# 학습 데이터와 y값을 산포도로 그리기
+plt.scatter(X,y, color='blue', marker='D')
+y_pred = regr.predict(X)            # 학습 데이터를 입력하여 예측값 계산
+plt.plot(X, y_pred, 'r:')           # 계산된 기울기와 y절편을 가지는 점선 그리기
+
+fig.savefig("LinearRegression_result.png")
+
+# 167 키를 넣어서 추정값 계산
+person = [[167]]
+result = regr.predict(person)
+print('키가 {}이므로 몸무게는 {}kg으로 추정됨'.format(\
+            person, result.round(1)))
+

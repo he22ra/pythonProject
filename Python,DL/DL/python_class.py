@@ -7,8 +7,6 @@
         2) init() 함수
             - 생성자
             - self.age : 현재 인스턴스의 age 변수
-
-
 '''
 class Human:
     def __init__(self):

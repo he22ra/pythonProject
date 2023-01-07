@@ -1,8 +1,8 @@
 import torch
 
 # 텐서의 평균 함수
-a = torch.tensor([
-    [1.0, 2, 3, 4],
+a = torch.Tensor([
+    [1, 2, 3, 4],
     [5, 6, 7, 8]
 ])
 print(a)

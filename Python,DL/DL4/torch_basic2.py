@@ -1,8 +1,20 @@
 import torch
-# result = torch.tensor([1, 2, 3])
-# tensor = torch.from_numpy(result)
-# print(tensor)
-# print(type(tensor))
+
+print(torch.__version__)
+
+a = torch.tensor([5])
+b = torch.tensor([7])
+
+# NumPy 배열에서 텐서를 초기화
+c = (a + b).numpy()
+print(c)
+print(type(c))
+
+print("--------------------")
+result = c * 10
+tensor = torch.from_numpy(result)
+print(tensor)
+print(type(tensor))
 
 # 다른 텐서의 정보를 토대로 텐서를 초기화
 print('---------------------------------')
@@ -46,7 +58,7 @@ print(result)
 # 텐서의 자료형(정수, 실수 등)을 변환
 print('---------------------------------------')
 
-a = torch.tensor([2], dtype=torch.float32)
+a = torch.tensor([2])
 b = torch.tensor([5.0])
 print(a)
 print(a.dtype)

@@ -14,10 +14,8 @@
 '''
 import os
 import pandas as pd
-import numpy as np
+import matplotlib.pyplot as plt
 import seaborn as sns
-import tensorflow as tf
-from matplotlib import pyplot as plt
 
 # 로그레벨이 3이 되면 warning이 뜨지 않음
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -52,7 +50,10 @@ plt.figure(figsize=(12,12))     # 그래프 크기
 
 # plasma를 기준으로 각각 정상과 당뇨가 어느 정도 비율로 분포 확인
 '''
-    hist()함수
+    hist() 함수 안에 x축 지정 (가져올 칼럼)
+        - diabetes 값이 0인 것과 1인 것을 구분해 불러옴 
+        - bins : x축을 몇개의 막대로 쪼개어 줄것인지 정함
+    => plasma 수치가 높아질수록 당뇨인 경우가 많음
 '''
 plt.hist(x=[df.plasma[df.diabetes == 0], df.plasma[df.diabetes ==1]], bins=30, histtype='barstacked', label=['normal', 'diabetes'])
 plt.legend()
@@ -64,6 +65,7 @@ plt.show()
 # plt.legend()
 # plt.show()
 
+# 피마 인디언 당뇨병 예측
 print('-----------------------------------------------')
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
